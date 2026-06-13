@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 300,
+  "experience": 0.4,
+  "group": "titanite",
+  "ingredient": "embercrest:titanite_ore",
+  "result": {
+    "id": "embercrest:titanite_shard"
+  }
+}

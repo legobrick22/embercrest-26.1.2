@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "embercrest:block/ruin_lantern"
+    },
+    "hanging=true": {
+      "model": "embercrest:block/ruin_lantern_hanging"
+    }
+  }
+}

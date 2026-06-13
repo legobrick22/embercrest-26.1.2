@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:item/handheld",
+	"textures": {
+	  "layer0": "embercrest:item/sealed_sword_flame"
+	}
+  }

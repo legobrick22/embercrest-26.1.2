@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "embercrest:titanite_slab_from_shard"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_titanite_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "embercrest:titanite_shard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_titanite_shard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "embercrest:titanite_slab_from_shard"
+    ]
+  }
+}

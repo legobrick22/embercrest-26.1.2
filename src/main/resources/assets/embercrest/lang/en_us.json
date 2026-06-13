@@ -1,0 +1,30 @@
+{
+  "item.embercrest.ancient_tablet": "Ancient Tablet",
+  "item.embercrest.element_sword": "Elemental Blade",
+  "item.embercrest.sealed_sword": "Sealed Sword",
+
+  "item.embercrest.holy_blade": "Holy Spear",
+  "item.embercrest.holy_trident": "Holy Spear",
+
+  "item.embercrest.titanite_shard": "Titanite Shard",
+  "item.embercrest.titanite_slab": "Titanite Slab",
+
+  "item.embercrest.rune_1": "Rune",
+  "item.embercrest.rune_2": "Rune",
+  "item.embercrest.rune_3": "Rune",
+  "item.embercrest.rune_4": "Rune",
+  "item.embercrest.rune_5": "Rune",
+  "item.embercrest.rune_6": "Rune",
+  "item.embercrest.rune_7": "Rune",
+  "item.embercrest.rune_8": "Rune",
+  "item.embercrest.rune_9": "Rune",
+  "item.embercrest.rune_10": "Rune",
+  "item.embercrest.rune_11": "Rune",
+
+
+  "block.embercrest.titanite_ore": "Titanite Ore",
+  "block.embercrest.deepslate_titanite_ore": "Deepslate Titanite Ore",
+
+  "creativetab.embercrest.embercrest": "Embercrest",
+  "block.embercrest.test_block.interact": "Awakening"
+}

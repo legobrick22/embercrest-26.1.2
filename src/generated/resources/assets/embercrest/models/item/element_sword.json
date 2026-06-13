@@ -1,0 +1,15 @@
+{
+	"parent": "minecraft:item/handheld",
+	"textures": {
+	  "layer0": "embercrest:item/element_sword"
+	},
+	"overrides": [
+		{"predicate": {"custom_model_data": 1},"model": "embercrest:item/element_sword_fire"},
+		{"predicate": {"custom_model_data": 2},"model": "embercrest:item/element_sword_ice"},
+		{"predicate": {"custom_model_data": 3},"model": "embercrest:item/element_sword_thunder"},
+		{"predicate": {"custom_model_data": 4},"model": "embercrest:item/element_sword_death"},
+		{"predicate": {"custom_model_data": 5},"model": "embercrest:item/element_sword_soul"},
+				{"predicate": {"custom_model_data": 6},"model": "embercrest:item/element_sword_ruin"}
+
+	]
+  }

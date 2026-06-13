@@ -1,0 +1,6 @@
+{
+  "parent": "embercrest:block/template_ruin_fire_up",
+  "textures": {
+    "fire": "embercrest:block/ruin_fire_1"
+  }
+}

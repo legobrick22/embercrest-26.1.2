@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "embercrest:titanite_shard_from_blasting_titanite_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_titanite_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "embercrest:titanite_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_titanite_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "embercrest:titanite_shard_from_blasting_titanite_ore"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "pack": {
+    "id": "embercrest",
+    "description": "Palladium addonpack for Embercrest.",
+    "pack_format": 15,
+    "version": "1.0.0"
+  },
+  "features": {
+    "enabled": [
+      "palladium:mechanic/tailoring",
+      "palladium:customization/eye_selection",
+      "palladium:worldgen/meteorite_biome",
+      "palladium:material/lead",
+      "palladium:material/titanium",
+      "palladium:material/vibranium"
+    ]
+  },
+
+  "dependencies": {
+    "common": {
+    },
+    "fabric": {
+    },
+    "forge": {
+    }
+  },
+    "custom": {
+    "curios": {
+      "runestone": {
+        "icon": "curios:slot/empty_ring_slot",
+        "priority": 50,
+        "size": 3,
+        "hide": false,
+        "cosmetic": false
+      }
+    }}
+
+}

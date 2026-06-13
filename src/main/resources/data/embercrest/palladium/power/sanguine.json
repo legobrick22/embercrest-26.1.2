@@ -1,0 +1,17 @@
+{
+  "name": "Sanguine One",
+  "icon": "minecraft:command_block",
+  "abilities": {
+  "speed_1": {
+    "type": "palladium:attribute_modifier",
+    "modifier": {
+      "attribute": "minecraft:movement_speed",
+      "amount": {
+        "type": "palladium:float_data_attachment",
+        "attachment": "embercrest:sanguine_speed"
+      },
+      "operation": "add_multiplied_base"
+    }
+  }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "titanite",
+  "ingredients": [
+    "embercrest:titanite_slab"
+  ],
+  "result": {
+    "count": 9,
+    "id": "embercrest:titanite_shard"
+  }
+}

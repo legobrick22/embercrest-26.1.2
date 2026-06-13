@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_deepslate_titanite_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "embercrest:deepslate_titanite_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "embercrest:titanite_shard_from_blasting_deepslate_titanite_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_deepslate_titanite_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "embercrest:titanite_shard_from_blasting_deepslate_titanite_ore"
+    ]
+  }
+}
