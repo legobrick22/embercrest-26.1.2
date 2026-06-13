@@ -9,11 +9,8 @@ import net.legobrick22.embercrest.block.custom.TestBlock;
 import net.legobrick22.embercrest.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CampfireBlock;
-import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
@@ -61,7 +58,6 @@ public class ModBlocks {
 
     public static final CobwebEntry<CustomCampfireBlock> RUIN_CAMPFIRE = FireRegistrar.registerCampfire(RUIN_FIRE_TYPE, true, CustomCampfireBlock::new);
 
-    public static final CobwebEntry<BlockItem> RUIN_CAMPFIRE_ITEM = FireRegistrar.registerCampfireItem(RUIN_FIRE_TYPE);
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function){
         DeferredBlock<T> toReturn = BLOCKS.registerBlock(name, function);

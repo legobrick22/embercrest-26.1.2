@@ -1,18 +1,13 @@
 package net.legobrick22.embercrest.item;
 
 import it.crystalnest.cobweb.api.registry.CobwebEntry;
-import it.crystalnest.prometheus.api.FireManager;
 import it.crystalnest.prometheus.api.FireRegistrar;
-import it.crystalnest.prometheus.api.block.CustomCampfireBlock;
 import net.legobrick22.embercrest.Embercrest;
-import net.legobrick22.embercrest.block.custom.TestBlock;
 import net.legobrick22.embercrest.food.ModFoods;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.Weapon;
-import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -69,9 +64,9 @@ public class ModItems {
     public static final DeferredItem<Item> CUT_EMERALD = ITEMS.registerSimpleItem("cut_emerald");
     public static final DeferredItem<Item> CUT_QUARTZ = ITEMS.registerSimpleItem("cut_quartz");
 
-    public static final DeferredItem<Item> BLOOD_VIAL = ITEMS.registerItem("blood_vial",
-            properties -> new Item(properties.food(ModFoods.BLOOD_VIAL, ModFoods.BLOOD_VIAL_CONSUMABLE)));
+    public static final DeferredItem<Item> BLOOD_VIAL = ITEMS.registerItem("blood_vial", properties -> new Item(properties.food(ModFoods.BLOOD_VIAL, ModFoods.BLOOD_VIAL_CONSUMABLE)));
 
+    public static final CobwebEntry<BlockItem> RUIN_CAMPFIRE_ITEM = FireRegistrar.registerCampfireItem(RUIN_FIRE_TYPE);
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
