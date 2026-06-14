@@ -60,10 +60,10 @@ public class Embercrest {
 
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
         ModEffects.MOB_EFFECTS.register(modEventBus);
 
         ModCreativeModeTabs.register(modEventBus);
-
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (Embercrest) to respond directly to events.
