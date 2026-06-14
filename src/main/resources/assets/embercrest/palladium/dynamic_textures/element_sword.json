@@ -1,0 +1,10 @@
+{
+  "base": "embercrest:textures/item/element_sword/element_sword_#CHARGE.png",
+  "variables": {
+    "CHARGE": {
+      "type": "palladium:string_data_attachment",
+      "attachment": "embercrest:contender_charge",
+      "fallback": ""
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Holy Blade",
+  "background": "palladium:textures/block/vibranium_block.png",
+  "icon": "embercrest:textures/item/holy_blade.png",
+  "abilities": {
+    "enableanim": {
+      "type": "palladium:flight",
+      "properties": {
+      "animation_timer": {
+        "min": 0,
+        "max": 38,
+        "easing": "linear"
+      },
+        "render_layer": "embercrest:render_holyblade"},
+        "state": {
+          "enabling": {
+            "type": "palladium:key_bind",
+            "key_bind": {
+              "type": "palladium:ability_key"
+            },
+            "behaviour": "toggle",
+            "cooldown": 20
+          }
+        }
+      }}
+
+}

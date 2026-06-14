@@ -58,11 +58,11 @@ public class Embercrest {
         modEventBus.addListener(this::commonSetup);
         FireTypes.init();
 
-        ModCreativeModeTabs.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
         ModEffects.MOB_EFFECTS.register(modEventBus);
 
+        ModCreativeModeTabs.register(modEventBus);
 
 
         // Register ourselves for server and other game events we are interested in.

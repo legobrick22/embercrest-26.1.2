@@ -132,7 +132,6 @@ public class RuinFireBlock extends BaseFireBlock implements FireTyped {
 
     protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         level.scheduleTick(pos, this, getFireTickDelay(level.getRandom()));
-        LoggerFactory.getLogger(Embercrest.MOD_ID).error("{}", getFireType());
 
         if (level.canSpreadFireAround(pos)) {
             if (!state.canSurvive(level, pos)) {

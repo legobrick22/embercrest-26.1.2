@@ -8,8 +8,8 @@
         }
     },
     "textures": {
-        "particle": "block/campfire_log",
-        "log": "block/campfire_log"
+        "particle": "embercrest:block/ruin_campfire_log",
+        "log": "embercrest:block/ruin_campfire_log"
     },
     "elements": [
         {

@@ -1,0 +1,25 @@
+{
+  "type": "geckolib:render_layer",
+  "model": "embercrest:geo/holy_blade_armor.json",
+  "texture": {
+    "base": "embercrest:textures/models/holy_blade_skin_0_0.png",
+    "transformers": [
+      {
+        "type": "palladium:alpha_mask",
+        "mask": "embercrest:textures/models/alpha_mask/holyblade/holy_blade_skin_#TIMER.png"
+      }
+    ],
+    "variables": {
+      "TIMER": {
+        "type": "palladium:ability_animation_timer_value",
+        "ability": "embercrest:holy_blade_tree#enableanim"
+      }
+    }
+  },
+  "conditions": {
+    "main": {
+      "type": "palladium:ability_enabled",
+      "ability": "embercrest:holy_blade_tree#enableanim"
+    }
+  }
+}

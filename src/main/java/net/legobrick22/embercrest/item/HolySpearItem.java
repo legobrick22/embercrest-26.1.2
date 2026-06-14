@@ -24,6 +24,7 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.arrow.AbstractArrow;
 import net.minecraft.world.entity.projectile.arrow.ThrownTrident;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.KineticWeapon;
 import net.minecraft.world.item.component.Tool;
@@ -56,11 +57,13 @@ public class HolySpearItem extends Item implements ProjectileItem {
                 Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, -2.9F, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND
             )
             .build();
+
     }
 
     public static Tool createToolProperties() {
         return new Tool(List.of(), 1.0F, 2, false);
     }
+
 
     @Override
     public ItemUseAnimation getUseAnimation(ItemStack itemStack) {
@@ -72,6 +75,7 @@ public class HolySpearItem extends Item implements ProjectileItem {
     public int getUseDuration(ItemStack itemStack, LivingEntity user) {
         return 72000;
     }
+
 
 
     @Override

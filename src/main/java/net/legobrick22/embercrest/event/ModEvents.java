@@ -40,8 +40,7 @@ public class ModEvents {
         LivingEntity entity =  event.getEntity();
 
         if (!entity.level().isClientSide()) {
-                entity.getMainHandItem().shrink(1);
-                entity.addEffect(new MobEffectInstance(MobEffects.POISON, 600, 5));
+                entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 600, 5));
             }
         }
     @SubscribeEvent

@@ -39,12 +39,16 @@ repositories {
             includeGroup "it.crystalnest"
         }
     }
+    maven {
+        name = 'GeckoLib'
+        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        content {
+            includeGroup("software.bernie.geckolib")
+        }
+    }
+
 }
 
-dependencies {
-    implementation "it.crystalnest:prometheus-neoforge:26.1-1.2.5"
-
-}
 
 base {
     archivesName = mod_id
@@ -131,6 +135,8 @@ configurations {
 dependencies {
     implementation files('libs/palladium-5.0.0+26.1.2.jar')
     implementation files('libs/PlayerAnimationLibMerged-1.2.3+mc.26.1.jar')
+    implementation "it.crystalnest:prometheus-neoforge:26.1-1.2.5"
+    implementation "com.geckolib:geckolib-neoforge-26.1.2:5.5.1"
 
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime

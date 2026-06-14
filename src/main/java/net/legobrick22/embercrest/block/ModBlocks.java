@@ -3,22 +3,24 @@ package net.legobrick22.embercrest.block;
 import it.crystalnest.cobweb.api.registry.CobwebEntry;
 import it.crystalnest.prometheus.api.FireRegistrar;
 import it.crystalnest.prometheus.api.block.CustomCampfireBlock;
+import it.crystalnest.prometheus.api.block.CustomLanternBlock;
+import it.crystalnest.prometheus.api.block.CustomTorchBlock;
+import it.crystalnest.prometheus.api.block.CustomWallTorchBlock;
 import net.legobrick22.embercrest.Embercrest;
 import net.legobrick22.embercrest.block.custom.RuinFireBlock;
 import net.legobrick22.embercrest.block.custom.TestBlock;
 import net.legobrick22.embercrest.item.ModItems;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CampfireBlock;
-import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.function.Function;
 
@@ -60,8 +62,8 @@ public class ModBlocks {
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final CobwebEntry<CustomCampfireBlock> RUIN_CAMPFIRE = FireRegistrar.registerCampfire(RUIN_FIRE_TYPE, true, CustomCampfireBlock::new);
+    public static final CobwebEntry<CustomLanternBlock> RUIN_LANTERN = FireRegistrar.registerLantern(RUIN_FIRE_TYPE);
 
-    public static final CobwebEntry<BlockItem> RUIN_CAMPFIRE_ITEM = FireRegistrar.registerCampfireItem(RUIN_FIRE_TYPE);
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function){
         DeferredBlock<T> toReturn = BLOCKS.registerBlock(name, function);
