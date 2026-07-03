@@ -1,0 +1,12 @@
+{
+  "trigger": {
+    "trigger": "palladium:ability_enabled",
+    "conditions": {
+      "ability": "embercrest:lord_contender#path_wraith"
+    }
+  },
+  "actions": {
+    "type": "palladium:run_command",
+    "command": "palladium data-attachment set entity @s embercrest:contender_path 2"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "lifetime": 20,
+  "has_physics": false,
+  "gravity": 0.01,
+  "quad_size": 0.2,
+  "render_type": "lit",
+  "texture_type": "random"
+}

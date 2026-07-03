@@ -1,0 +1,267 @@
+{
+  "name": "Devourer",
+  "ability_bar_texture": "embercrest:textures/gui/ability_bar_embercrest.png",
+  "background": "minecraft:textures/block/soul_sand.png",
+  "icon": "embercrest:textures/item/holy_blade.png",
+  "gui_display_type": "tree",
+  "animation_controller": {
+    "idle": "embercrest:tendril"},
+
+  "abilities": {
+    "base": {
+      "type": "palladium:dummy",
+      "properties": {
+        "icon": "minecraft:rotten_flesh",
+        "title": "Devourer",
+        "hidden": false,
+        "hidden_in_bar": true,
+        "gui_position": [
+          0,
+          0
+        ],
+        "description": "Devourer."
+      }
+    },
+    "horns_tree": {
+      "type": "palladium:dummy",
+      "properties": {
+        "icon": "minecraft:rotten_flesh",
+        "title": "Horns",
+        "hidden": false,
+        "hidden_in_bar": true,
+        "gui_position": [
+          1,
+          0
+        ],
+        "description": "Devourer."
+      }},
+      "tail_tree": {
+        "type": "palladium:dummy",
+        "properties": {
+          "icon": "minecraft:rotten_flesh",
+          "title": "Tail",
+          "hidden": false,
+          "hidden_in_bar": true,
+          "gui_position": [
+            -1,
+            0
+          ],
+          "description": "Devourer."
+        }
+
+    },
+    "claws_tree": {
+      "type": "palladium:dummy",
+      "properties": {
+        "icon": "minecraft:rotten_flesh",
+        "title": "Claws",
+        "hidden": false,
+        "hidden_in_bar": true,
+        "gui_position": [
+          0,
+          1
+        ],
+        "description": "Devourer."
+      }
+    },
+    "tentacle_tree": {
+      "type": "palladium:dummy",
+      "properties": {
+        "icon": "minecraft:rotten_flesh",
+        "title": "Tentacle",
+        "hidden": false,
+        "hidden_in_bar": true,
+        "gui_position": [
+          0,
+          -1
+        ],
+        "description": "Devourer."
+      }
+    },"wings_tree": {
+      "type": "palladium:dummy",
+      "properties": {
+        "icon": "minecraft:rotten_flesh",
+        "title": "Wings",
+        "hidden": false,
+        "hidden_in_bar": true,
+        "gui_position": [
+          2,
+          0.5
+        ],
+        "description": "Devourer."
+      }
+    },
+    "exoskeleton_tree": {
+      "type": "palladium:dummy",
+      "properties": {
+        "icon": "minecraft:rotten_flesh",
+        "title": "Exoskeleton",
+        "hidden": false,
+        "hidden_in_bar": true,
+        "gui_position": [
+          2,
+          -0.5
+        ],
+        "description": "Devourer."
+      }
+    },
+    "plating_tree": {
+      "type": "palladium:dummy",
+      "properties": {
+        "icon": "minecraft:rotten_flesh",
+        "title": "Ancient Plating",
+        "hidden": false,
+        "hidden_in_bar": true,
+        "gui_position": [
+          -2,
+          0.5
+        ],
+        "description": "Devourer."
+      }
+    },
+    "alien_tree": {
+      "type": "palladium:dummy",
+      "properties": {
+        "icon": "minecraft:rotten_flesh",
+        "title": "Alien Skin",
+        "hidden": false,
+        "hidden_in_bar": true,
+        "gui_position": [
+          -2,
+          -0.5
+        ],
+        "description": "Devourer."
+      }
+    },
+    "giant_tree": {
+      "type": "palladium:dummy",
+      "properties": {
+        "icon": "minecraft:rotten_flesh",
+        "title": "Gigantism",
+        "hidden": false,
+        "hidden_in_bar": true,
+        "gui_position": [
+          0.5,
+          2
+        ],
+        "description": "Devourer."
+      }
+    },
+    "muscle_tree": {
+      "type": "palladium:dummy",
+      "properties": {
+        "icon": "minecraft:rotten_flesh",
+        "title": "Enhanced Musculature",
+        "hidden": false,
+        "hidden_in_bar": true,
+        "gui_position": [
+          -0.5,
+          2
+        ],
+        "description": "Devourer."
+      }
+    },
+    "skull_tree": {
+      "type": "palladium:dummy",
+      "properties": {
+        "icon": "minecraft:rotten_flesh",
+        "title": "Many-Eyed Skull",
+        "hidden": false,
+        "hidden_in_bar": true,
+        "gui_position": [
+          0.5,
+          -2
+        ],
+        "description": "Devourer."
+      }
+    },
+    "hollow_tree": {
+      "type": "palladium:dummy",
+      "properties": {
+        "icon": "minecraft:rotten_flesh",
+        "title": "Hollow One",
+        "hidden": false,
+        "hidden_in_bar": true,
+        "gui_position": [
+          -0.5,
+          -2
+        ],
+        "description": "Devourer."
+      }
+    },
+    "tendrils_tree": {
+      "type": "palladium:dummy",
+      "properties": {
+        "icon": "minecraft:rotten_flesh",
+        "title": "Tendrils",
+        "hidden": false,
+        "hidden_in_bar": true,
+        "gui_position": [
+          3.5,
+          0
+        ],
+        "description": "Devourer."
+      }
+    },
+    "threehead_tree": {
+      "type": "palladium:dummy",
+      "properties": {
+        "icon": "minecraft:rotten_flesh",
+        "title": "Triple-Headed",
+        "hidden": false,
+        "hidden_in_bar": true,
+        "gui_position": [
+          0,
+          3.5
+        ],
+        "description": "Devourer."
+      }
+    },
+    "legs_tree": {
+      "type": "palladium:dummy",
+      "properties": {
+        "icon": "minecraft:rotten_flesh",
+        "title": "Mechanical Legs",
+        "hidden": false,
+        "hidden_in_bar": true,
+        "gui_position": [
+          0,
+          -3.5
+        ],
+        "description": "Devourer."
+      }
+    },
+    "crown_tree": {
+      "type": "palladium:dummy",
+      "properties": {
+        "icon": "minecraft:rotten_flesh",
+        "title": "Royal",
+        "hidden": false,
+        "hidden_in_bar": true,
+        "gui_position": [
+          -3.5,
+          0
+        ],
+        "description": "Devourer."
+      }
+    },
+    "enableanim": {
+      "type": "palladium:flight",
+      "properties": {
+        "animation_timer": {
+          "min": 0,
+          "max": 38,
+          "easing": "linear"
+        }}},
+    "enableanim_spider_X": {
+      "type": "palladium:flight",
+      "properties": {
+        "animation_timer": {
+          "min": 0,
+          "max": 38,
+          "easing": "linear"
+        }}}
+}
+
+
+}

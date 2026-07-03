@@ -127,7 +127,7 @@ public class HolySpearItem extends Item implements ProjectileItem {
             return InteractionResult.FAIL;
         }  else {
             player.startUsingItem(hand);
-            return InteractionResult.CONSUME;
+            return InteractionResult.FAIL;
         }
     }
        else if (Objects.equals(player.getData(attachment), 0)){

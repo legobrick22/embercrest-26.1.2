@@ -2,12 +2,24 @@ package net.legobrick22.embercrest.datagen;
 
 import net.legobrick22.embercrest.Embercrest;
 import net.legobrick22.embercrest.block.ModBlocks;
+import net.legobrick22.embercrest.data.ModDataComponents;
 import net.legobrick22.embercrest.item.ModItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
+import net.minecraft.client.data.models.model.ItemModelUtils;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.renderer.item.ClientItem;
+import net.minecraft.client.renderer.item.ConditionalItemModel;
+import net.minecraft.client.renderer.item.ItemModel;
+import net.minecraft.client.renderer.item.properties.conditional.Damaged;
+import net.minecraft.client.renderer.item.properties.conditional.HasComponent;
+import net.minecraft.client.renderer.item.properties.conditional.IsSelected;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.Identifier;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+
+import java.util.Optional;
 
 public class ModModelProvider extends ModelProvider {
     public ModModelProvider(PackOutput output) {
@@ -50,6 +62,14 @@ itemModels.generateFlatItem(ModItems.ANCIENT_TABLET.get(), ModelTemplates.FLAT_I
         itemModels.generateFlatItem(ModItems.CUT_RUBY.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.CUT_QUARTZ.get(), ModelTemplates.FLAT_ITEM);
 
+
+        ItemModel.Unbaked ElementSword = ItemModelUtils.plainModel(itemModels.createFlatItemModel(ModItems.ELEMENT_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM));
+        ItemModel.Unbaked ElementSwordFire = ItemModelUtils.plainModel(itemModels.createFlatItemModel(ModItems.ELEMENT_SWORD.get(), "_on", ModelTemplates.FLAT_HANDHELD_ITEM));
+        var attachment = NeoForgeRegistries.ATTACHMENT_TYPES.getValue(Identifier.fromNamespaceAndPath("embercrest", "contender_charge"));
+
+        itemModels.itemModelOutput.register(ModItems.ELEMENT_SWORD.get(),
+                new ClientItem(new ConditionalItemModel.Unbaked(Optional.empty(), new HasComponent(ModDataComponents.CHARGE.get(), false),
+                        ElementSword, ElementSwordFire), new ClientItem.Properties(false, false, 1f)));
 
     }
 }

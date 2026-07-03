@@ -19,6 +19,29 @@ public class ModFoods {
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 2), 1f))
             .build();
 
+    public static final FoodProperties GREEN_BLOOD_VIAL = new FoodProperties.Builder().nutrition(0).saturationModifier(0f).build();
+
+    public static final Consumable GREEN_BLOOD_VIAL_CONSUMABLE = Consumables.defaultDrink()
+            .consumeSeconds(1.5f)
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HUNGER, 400, 1), 1f))
+            .build();
+
+    public static final FoodProperties PUTREFIED_FLESH = new FoodProperties.Builder().nutrition(0).saturationModifier(0f).build();
+
+    public static final Consumable PUTREFIED_FLESH_CONSUMABLE = Consumables.defaultDrink()
+            .consumeSeconds(2.5f)
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.POISON, 400, 2), 1f))
+            .build();
+
+    public static final FoodProperties LIQUIFIED_FLESH = new FoodProperties.Builder().nutrition(1).saturationModifier(0.1f).build();
+
+    public static final Consumable LIQUIFIED_FLESH_CONSUMABLE = Consumables.defaultDrink()
+            .consumeSeconds(2.5f)
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.NAUSEA, 100, 0), 1f))
+            .build();
+
+
+
     public static final FoodProperties CUT_RUBY = new FoodProperties.Builder().alwaysEdible().nutrition(0).saturationModifier(0f)
             .build();
 

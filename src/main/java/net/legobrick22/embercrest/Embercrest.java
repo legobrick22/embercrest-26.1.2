@@ -1,11 +1,17 @@
 package net.legobrick22.embercrest;
 
 import net.legobrick22.embercrest.block.ModBlocks;
+import net.legobrick22.embercrest.client.model.ContenderCharge;
 import net.legobrick22.embercrest.creativemodetab.ModCreativeModeTabs;
+import net.legobrick22.embercrest.data.ModDataComponents;
 import net.legobrick22.embercrest.fire.FireTypes;
 import net.legobrick22.embercrest.item.ModItems;
+import net.legobrick22.embercrest.registry.ModComponentTypes;
 import net.legobrick22.embercrest.registry.ModEffects;
+import net.legobrick22.embercrest.registry.ModParticleTypes;
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.resources.Identifier;
+import net.neoforged.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -56,14 +62,19 @@ public class Embercrest {
     public Embercrest(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+
         FireTypes.init();
 
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
-        ModCreativeModeTabs.register(modEventBus);
-        ModEffects.MOB_EFFECTS.register(modEventBus);
+        ModDataComponents.register(modEventBus);
 
-        ModCreativeModeTabs.register(modEventBus);
+        if (FMLEnvironment.getDist().isClient()) {
+            modEventBus.addListener(ContenderCharge::registerRangeProperties);
+        }
+            ModCreativeModeTabs.register(modEventBus);
+        ModEffects.MOB_EFFECTS.register(modEventBus);
+        ModParticleTypes.PARTICLE_TYPES.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (Embercrest) to respond directly to events.

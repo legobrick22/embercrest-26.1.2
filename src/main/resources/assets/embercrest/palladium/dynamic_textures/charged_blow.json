@@ -1,0 +1,9 @@
+{
+  "base": "embercrest:textures/icon/charged_blow_#CHARGE.png",
+  "variables": {
+    "CHARGE": {
+      "type": "palladium:integer_data_attachment",
+      "attachment": "embercrest:contender_charge"
+    }
+  }
+}

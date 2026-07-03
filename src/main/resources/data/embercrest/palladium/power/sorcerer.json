@@ -1,0 +1,162 @@
+{
+  "name": "Sorcerer",
+  "icon": "minecraft:command_block",
+  "ability_bar_texture": "embercrest:textures/gui/ability_bar_embercrest.png",
+
+  "abilities": {
+    "gravity_manipulation_push": {
+      "type": "palladium:command",
+      "commands": [],
+      "title": "Push",
+      "first_tick_commands": [
+        "data modify storage embercrest:gravity_rotation rotate set from entity @s Rotation",
+        "execute as @e[distance=0.01..10] store result score @s gravity_rotation_x run data get storage embercrest:gravity_rotation rotate[0]",
+        "execute as @e[distance=0.01..10] run scoreboard players set @s gravity_rotation_r 0",
+        "execute as @e[distance=0.01..10] store result score @s gravity_rotation_y run data get storage embercrest:gravity_rotation rotate[1]",
+        "effect give @e[distance=0.01..10] embercrest:gravity 3 0 true"
+      ],
+      "state": {
+        "enabling": {
+          "type": "palladium:key_bind",
+          "key_bind": {
+            "type": "palladium:ability_key"
+          },
+          "behaviour": "activation",
+          "time": 60,
+          "cooldown": 40
+        }
+      }
+    },
+    "gravity_manipulation_pull": {
+      "type": "palladium:command",
+      "commands": [],
+      "title": "Pull",
+      "first_tick_commands": [
+        "data modify storage embercrest:gravity_rotation rotate set from entity @s Rotation",
+        "execute as @e[distance=0.01..10] store result score @s gravity_rotation_x run data get storage embercrest:gravity_rotation rotate[0]",
+        "execute as @e[distance=0.01..10] run scoreboard players set @s gravity_rotation_r 1",
+        "execute as @e[distance=0.01..10] store result score @s gravity_rotation_y run data get storage embercrest:gravity_rotation rotate[1]",
+        "effect give @e[distance=0.01..10] embercrest:gravity 3 0 true"
+      ],
+      "state": {
+        "enabling": {
+          "type": "palladium:key_bind",
+          "key_bind": {
+            "type": "palladium:ability_key"
+          },
+          "behaviour": "activation",
+          "time": 60,
+          "cooldown": 40
+        }
+      }
+    },
+    "gravity_levitate_slow": {
+      "type": "palladium:attribute_modifier",
+      "modifiers": {
+        "attribute": "minecraft:movement_speed",
+        "amount": -0.9,
+        "operation": "add_multiplied_total"
+      },
+      "state": {
+        "enabling": {
+          "type": "palladium:is_creative_flying"}
+      }
+    },
+    "gravity_manipulation_leap": {
+      "type": "palladium:command",
+      "commands": [],
+      "title": "Leap",
+      "first_tick_commands": [
+        "execute store result score @s gravity_rotation_x run data get entity @s Rotation[0]",
+        "execute run scoreboard players set @s gravity_rotation_r 0",
+        "execute store result score @s gravity_rotation_y run data get entity @s Rotation[1]",
+        "effect give @s embercrest:instant_gravity 1 0 true",
+        "effect give @s embercrest:anti_gravity 4 0 true"
+      ],
+      "state": {
+        "enabling": {
+          "type": "palladium:key_bind",
+          "key_bind": {
+            "type": "palladium:ability_key"
+          },
+          "behaviour": "activation",
+          "time": 20,
+          "cooldown": 40
+        }
+      }
+    },
+    "gravity_manipulation_rise": {
+      "type": "palladium:command",
+      "commands": [],
+      "title": "Rise",
+      "first_tick_commands": [
+        "effect give @e[distance=..10] embercrest:anti_gravity 2 1 true",
+        "tag @e[distance=..10] add gravity_rise"
+      ],
+      "last_tick_commands": [
+        "effect give @e[distance=..20,tag=gravity_rise] embercrest:anti_gravity 5 0 true",
+        "tag @e[distance=..20] remove gravity_rise"
+      ],
+      "state": {
+        "enabling": {
+          "type": "palladium:key_bind",
+          "key_bind": {
+            "type": "palladium:ability_key"
+          },
+          "behaviour": "toggle",
+          "time": 40,
+          "cooldown": 40
+        }
+      }},
+    "gravity_manipulation_hover": {
+      "type": "palladium:command",
+      "commands": [],
+      "title": "Rise",
+      "first_tick_commands": [
+        "effect clear @s embercrest:anti_gravity",
+
+        "effect give @s embercrest:anti_gravity infinite 0 true"],
+      "last_tick_commands": [
+        "effect clear @s embercrest:anti_gravity"
+      ],
+      "state": {
+        "enabling": {
+          "type": "palladium:key_bind",
+          "key_bind": {
+            "type": "palladium:jump"
+          },
+          "behaviour": "toggle"},
+        "unlocking": {
+          "type": "palladium:has_effect",
+          "effect": "embercrest:anti_gravity"
+
+        }}
+  },
+    "gravity_fall_immunity": {
+      "type": "palladium:damage_immunity",
+      "damage_type": "minecraft:cactus"
+
+    }
+  ,
+  "curse_flight": {
+    "type": "palladium:flight",
+    "flight_type": "embercrest:arcane_flight",
+    "properties": {
+      "animation_timer": {
+        "min": 0,
+        "max": 38,
+        "easing": "linear"
+      }
+    },
+    "state": {
+      "enabling": {
+        "type": "palladium:key_bind",
+        "key_bind": {
+          "type": "palladium:ability_key"
+        },
+        "behaviour": "toggle",
+        "cooldown": 20
+      }
+    }
+  }}}
+

@@ -1,0 +1,11 @@
+{
+  "type": "palladium:flight",
+  "speed": 0.25,
+  "sprint_speed": 0.75,
+  "animation": {
+    "asset_id": "palladium:flight/default",
+    "max_lean": 35,
+    "body_stiffness": 10,
+    "limb_stiffness": 5
+  }
+}

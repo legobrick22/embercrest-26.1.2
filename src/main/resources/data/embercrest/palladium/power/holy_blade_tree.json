@@ -11,17 +11,6 @@
         "max": 38,
         "easing": "linear"
       },
-        "render_layer": "embercrest:render_holyblade"},
-        "state": {
-          "enabling": {
-            "type": "palladium:key_bind",
-            "key_bind": {
-              "type": "palladium:ability_key"
-            },
-            "behaviour": "toggle",
-            "cooldown": 20
-          }
-        }
-      }}
+        "render_layer": "embercrest:render_holyblade"}}}
 
 }

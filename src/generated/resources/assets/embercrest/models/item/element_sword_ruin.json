@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:item/handheld",
 	"textures": {
-	  "layer0": "embercrest:item/element_sword_fire_green"
+	  "layer0": "embercrest:item/element_sword/element_sword_fire_green"
 	}
   }

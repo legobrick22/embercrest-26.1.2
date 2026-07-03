@@ -1,0 +1,98 @@
+{
+  "trigger": {
+    "trigger": "palladium:ability_enabled",
+    "conditions": {
+      "ability": "embercrest:lord_contender#activate_charge"
+    }
+  },
+  "actions": {
+    "type": "palladium:conditional",
+    "condition": {
+      "type": "palladium:number_data_attachment",
+      "attachment": "embercrest:contender_charge_selected",
+      "min": 0,
+      "max": 0
+    },
+    "on_true": {
+      "type": "palladium:run_command",
+      "command": "palladium data-attachment set entity @s embercrest:contender_charge 0"
+    },
+    "on_false": {
+      "type": "palladium:conditional",
+      "condition": {
+        "type": "palladium:number_data_attachment",
+        "attachment": "embercrest:contender_charge_selected",
+        "min": 1,
+        "max": 1
+      },
+      "on_true": {
+        "type": "palladium:run_command",
+        "command": "palladium data-attachment set entity @s embercrest:contender_charge 1"
+      },
+      "on_false": {
+        "type": "palladium:conditional",
+        "condition": {
+          "type": "palladium:number_data_attachment",
+          "attachment": "embercrest:contender_charge_selected",
+          "min": 2,
+          "max": 2
+        },
+        "on_true": {
+          "type": "palladium:run_command",
+          "command": "palladium data-attachment set entity @s embercrest:contender_charge 2"
+        },
+        "on_false": {
+          "type": "palladium:conditional",
+          "condition": {
+            "type": "palladium:number_data_attachment",
+            "attachment": "embercrest:contender_charge_selected",
+            "min": 3,
+            "max": 3
+          },
+          "on_true": {
+            "type": "palladium:run_command",
+            "command": "palladium data-attachment set entity @s embercrest:contender_charge 3"
+          },
+          "on_false": {
+            "type": "palladium:conditional",
+            "condition": {
+              "type": "palladium:number_data_attachment",
+              "attachment": "embercrest:contender_charge_selected",
+              "min": 6,
+              "max": 6
+            },
+            "on_true": {
+              "type": "palladium:run_command",
+              "command": "palladium data-attachment set entity @s embercrest:contender_charge 6"
+            },
+            "on_false": {
+              "type": "palladium:conditional",
+              "condition": {
+                "type": "palladium:number_data_attachment",
+                "attachment": "embercrest:contender_charge_selected",
+                "min": 4,
+                "max": 4
+              },
+              "on_true": {
+                "type": "palladium:run_command",
+                "command": "palladium data-attachment set entity @s embercrest:contender_charge 4"
+              },
+              "on_false": {
+                "type": "palladium:conditional",
+                "condition": {
+                  "type": "palladium:number_data_attachment",
+                  "attachment": "embercrest:contender_charge_selected",
+                  "min": 5,
+                  "max": 5
+                },
+                "on_true": {
+                  "type": "palladium:run_command",
+                  "command": "palladium data-attachment set entity @s embercrest:contender_charge 5"
+                },
+                "on_false": {
+                  "type": "palladium:run_command",
+                  "command": "palladium data-attachment set entity @s embercrest:contender_charge 0"
+                }        }      }    }
+              }        }      }    }
+            }
+

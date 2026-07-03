@@ -1,0 +1,14 @@
+{
+  "animation_controller": {
+    "idle": "embercrest:tendril"
+  },
+  "render_layers": {
+    "embercrest:render_tendril": {
+      "type": "palladium:ability_enabled",
+      "ability": "embercrest:devourer#enableanim"
+    },
+  "embercrest:render_spider_body": {
+    "type": "palladium:ability_enabled",
+    "ability": "embercrest:devourer#enableanim_spider"
+  }}
+}

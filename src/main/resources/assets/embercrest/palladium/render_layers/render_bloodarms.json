@@ -1,0 +1,25 @@
+{
+  "type": "palladium:render_layer",
+  "model_layer": "embercrest:blood_arms_v1",
+  "texture": {
+    "base": "embercrest:textures/models/blood_arms_v1.png",
+    "transformers": [
+      {
+        "type": "palladium:alpha_mask",
+        "mask": "embercrest:textures/models/alpha_mask/sanguine/blood_arms_alpha_#TIMER.png"
+      }
+    ],
+    "variables": {
+      "TIMER": {
+        "type": "palladium:ability_animation_timer_value",
+        "ability": "embercrest:sanguine#enableanimblood"
+      }
+    }
+  },
+  "conditions": {
+    "main": {
+      "type": "palladium:ability_enabled",
+      "ability": "embercrest:sanguine#enableanimblood"
+    }
+  }
+}

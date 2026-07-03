@@ -1,0 +1,13 @@
+{
+  "type": "palladium:render_layer",
+  "model_layer": "embercrest:tendrils.geo",
+  "texture": {
+    "base": "embercrest:textures/models/tendril.png"
+  },
+  "conditions": {
+    "main": {
+      "type": "palladium:ability_enabled",
+      "ability": "embercrest:devourer#enableanim"
+    }
+  }
+}

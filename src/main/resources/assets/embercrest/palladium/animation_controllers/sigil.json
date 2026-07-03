@@ -1,0 +1,40 @@
+{
+  "initial_state": "idle",
+  "states": {
+    "idle": {
+      "transitions": {
+        "attack": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "embercrest:lord_contender#activate_charge_bar"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:or",
+                "conditions": [
+                  {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "embercrest:lord_contender#element_mastery"
+                  },{
+                    "type": "palladium:number_data_attachment",
+                    "attachment": "embercrest:accursed_boon_enabled",
+                    "min": 1,
+                    "max": 601
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "attack": {
+      "animation": "embercrest:animation.sigilcharge",
+      "transitions": {
+        "idle": "palladium.any_animation_finished()"
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
 package net.legobrick22.embercrest;
 
+import net.legobrick22.embercrest.registry.ModParticleTypes;
+import net.legobrick22.embercrest.registry.RegisterParticleProviders;
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -7,6 +9,7 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
@@ -28,4 +31,9 @@ public class EmbercrestClient {
         Embercrest.LOGGER.info("HELLO FROM CLIENT SETUP");
         Embercrest.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
     }
+
+
+
+
+
 }

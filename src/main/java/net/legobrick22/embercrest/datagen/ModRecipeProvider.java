@@ -74,6 +74,7 @@ public class ModRecipeProvider extends RecipeProvider {
         oreSmelting(TITANITE_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.TITANITE_SHARD.get(), 0.4f, 300, "titanite");
         oreBlasting(TITANITE_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.TITANITE_SHARD.get(), 0.4f, 150, "titanite");
 
+
     }
 
     @Override

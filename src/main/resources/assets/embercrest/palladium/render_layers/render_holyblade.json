@@ -1,6 +1,6 @@
 {
-  "type": "geckolib:render_layer",
-  "model": "embercrest:geo/holy_blade_armor.json",
+  "type": "palladium:render_layer",
+  "model_layer": "embercrest:holy_blade_armor.geo",
   "texture": {
     "base": "embercrest:textures/models/holy_blade_skin_0_0.png",
     "transformers": [

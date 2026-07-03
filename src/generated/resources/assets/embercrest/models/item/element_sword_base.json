@@ -1,0 +1,26 @@
+{
+	"parent": "minecraft:item/handheld",
+	"textures": {
+		"layer0": "embercrest:item/element_sword/element_sword"
+	},
+	"overrides": [
+		{
+			"predicate": {
+				"custom_model_data": 1
+			},
+			"model": "embercrest:item/element_sword_fire"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 2
+			},
+			"model": "embercrest:item/element_sword_ice"
+		},
+		{
+			"predicate": {
+				"custom_model_data": 3
+			},
+			"model": "embercrest:item/element_sword_thunder"
+		}
+	]
+}

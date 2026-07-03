@@ -1,0 +1,1028 @@
+{
+  "name": "Lord Contender",
+  "screen": "embercrest:contender",
+  "ability_bar_texture": "embercrest:textures/gui/ability_bar_embercrest.png",
+  "icon": "#embercrest:lord_contender",
+  "abilities": {
+    "set_charge_fire_bar": {
+      "type": "palladium:command",
+      "properties": {
+        "title": "Elemental Charge: Flame",
+        "icon": "embercrest:textures/item/element_sword/element_sword_fire.png",
+        "description": "An elemental charge that allows you to imbue your blade with flame.",
+        "list_index": 1,
+        "hidden_in_gui": true
+      },
+      "first_tick_commands": [
+        "palladium data-attachment set entity @s embercrest:contender_charge_selected 1"
+      ],
+      "state": {
+        "enabling": {
+          "type": "palladium:key_bind",
+          "key_bind": {
+            "type": "palladium:ability_key"
+          },
+          "behaviour": "activation",
+          "time": 1,
+          "cooldown": 40
+        },
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "embercrest:lord_contender#set_charge_fire"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_unlocked",
+                "ability": "embercrest:lord_contender#path_wraith"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "set_charge_fire": {
+      "type": "palladium:dummy",
+      "properties": {
+        "title": "Elemental Charge: Flame",
+        "icon": "embercrest:textures/item/element_sword/element_sword_fire.png",
+        "description": "An elemental charge that allows you to imbue your blade with flame.",
+        "hidden_in_bar": true,
+        "gui_position": [
+          -1,
+          0
+        ]
+      },
+      "state": {
+        "unlocking": {
+          "type": "palladium:buyable",
+          "cost": {
+            "type": "palladium:item",
+            "ingredient": "embercrest:titanite_slab",
+            "amount": 2
+          },
+          "requires": [
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "embercrest:lord_contender#lord_contender"
+            }
+          ]
+        }
+      }
+    },
+    "set_charge_ice_bar": {
+      "type": "palladium:command",
+      "properties": {
+        "title": "Elemental Charge: Ice",
+        "icon": "embercrest:textures/item/element_sword/element_sword_ice.png",
+        "description": "An elemental charge that allows you to imbue your blade with frost.",
+        "list_index": 2,
+        "hidden_in_gui": true
+      },
+      "first_tick_commands": [
+        "palladium data-attachment set entity @s embercrest:contender_charge_selected 2"
+      ],
+      "state": {
+        "enabling": {
+          "type": "palladium:key_bind",
+          "key_bind": {
+            "type": "palladium:ability_key"
+          },
+          "behaviour": "activation",
+          "time": 1,
+          "cooldown": 40
+        },
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "embercrest:lord_contender#set_charge_ice"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_unlocked",
+                "ability": "embercrest:lord_contender#path_wraith"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "set_charge_ice": {
+      "type": "palladium:dummy",
+      "properties": {
+        "title": "Elemental Charge: Ice",
+        "icon": "embercrest:textures/item/element_sword/element_sword_ice.png",
+        "description": "An elemental charge that allows you to imbue your blade with frost.",
+        "gui_position": [
+          -0.75,
+          1
+        ],
+        "hidden_in_bar": true
+      },
+      "state": {
+        "unlocking": {
+          "type": "palladium:buyable",
+          "cost": {
+            "type": "palladium:item",
+            "ingredient": "embercrest:titanite_slab",
+            "amount": 1
+          },
+          "requires": [
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "embercrest:lord_contender#lord_contender"
+            }
+          ]
+        }
+      }
+    },
+    "set_charge_thunder": {
+      "type": "palladium:dummy",
+      "properties": {
+        "title": "Elemental Charge: Thunder",
+        "icon": "embercrest:textures/item/element_sword/element_sword_thunder.png",
+        "description": "An elemental charge that allows you to imbue your blade with electricity.",
+        "hidden_in_bar": true,
+        "gui_position": [
+          -0.75,
+          -1
+        ]
+      },
+      "state": {
+        "unlocking": {
+          "type": "palladium:buyable",
+          "cost": {
+            "type": "palladium:item",
+            "ingredient": "embercrest:titanite_slab",
+            "amount": 1
+          },
+          "requires": [
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "embercrest:lord_contender#lord_contender"
+            }
+          ]
+        }
+      }
+    },
+    "set_charge_thunder_bar": {
+      "type": "palladium:command",
+      "properties": {
+        "title": "Elemental Charge: Thunder",
+        "icon": "embercrest:textures/item/element_sword/element_sword_thunder.png",
+        "description": "An elemental charge that allows you to imbue your blade with electricity.",
+        "list_index": 3,
+        "hidden_in_gui": true
+      },
+      "first_tick_commands": [
+        "palladium data-attachment set entity @s embercrest:contender_charge_selected 3"
+      ],
+      "state": {
+        "enabling": {
+          "type": "palladium:key_bind",
+          "key_bind": {
+            "type": "palladium:ability_key"
+          },
+          "behaviour": "activation",
+          "time": 1,
+          "cooldown": 40
+        },
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "embercrest:lord_contender#set_charge_thunder"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_unlocked",
+                "ability": "embercrest:lord_contender#path_wraith"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "activate_charge_bar": {
+      "type": "palladium:dummy",
+      "properties": {
+        "title": "Activate Elemental Charge",
+        "icon": "embercrest:textures/icon/contender_charge.png",
+        "description": "Activate your chosen elemental charge..",
+        "list_index": 0,
+        "hidden_in_gui": true
+      },
+      "state": {
+        "enabling": {
+          "type": "palladium:key_bind",
+          "key_bind": {
+            "type": "palladium:ability_key"
+          },
+          "behaviour": "activation",
+          "time": 30,
+          "cooldown": 40
+        }
+      }
+    },
+    "activate_charge": {
+      "type": "palladium:dummy",
+      "properties": {
+        "title": "Activate Elemental Charge",
+        "icon": "embercrest:textures/icon/contender_charge.png",
+        "description": "Activate your chosen elemental charge..",
+        "list_index": 0,
+        "hidden_in_gui": true,
+        "hidden_in_bar": true
+      },
+      "state": {
+        "enabling": [
+          {
+            "type": "palladium:or",
+            "conditions": [
+              {
+                "type": "palladium:and",
+                "conditions": [
+                  {
+                    "type": "palladium:ability_last_tick",
+                    "ability": "embercrest:lord_contender#activate_charge_bar"
+                  },
+                  {
+                    "type": "palladium:not",
+                    "conditions": [
+                      {
+                        "type": "palladium:or",
+                        "conditions": [
+                          {
+                            "type": "palladium:ability_unlocked",
+                            "ability": "embercrest:lord_contender#element_mastery"
+                          },
+                          {
+                            "type": "palladium:number_data_attachment",
+                            "attachment": "embercrest:accursed_boon_enabled",
+                            "min": 1,
+                            "max": 601
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "palladium:and",
+                "conditions": [
+                  {
+                    "type": "palladium:ability_first_tick",
+                    "ability": "embercrest:lord_contender#activate_charge_bar"
+                  },
+                  {
+                    "type": "palladium:or",
+                    "conditions": [
+                      {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "embercrest:lord_contender#element_mastery"
+                      },
+                      {
+                        "type": "palladium:number_data_attachment",
+                        "attachment": "embercrest:accursed_boon_enabled",
+                        "min": 1,
+                        "max": 601
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+
+      }
+    },
+    "lord_contender": {
+      "type": "palladium:dummy",
+      "properties": {
+        "icon": "embercrest:textures/icon/contender_charge.png",
+        "title": "Lord Contender"
+      },
+      "state": {
+        "unlocking": {
+          "type": "palladium:buyable",
+          "cost": {
+            "type": "palladium:item",
+            "ingredient": "embercrest:titanite_slab",
+            "amount": 1
+          }
+        }
+      }
+    },
+    "path_knight": {
+      "type": "palladium:dummy",
+      "properties": {
+        "gui_position": [
+          -1.85,
+          1.5
+        ],
+        "title": "Path: Knight"
+      },
+      "state": {
+        "unlocking": {
+          "type": "palladium:buyable",
+          "cost": {
+            "type": "palladium:item",
+            "ingredient": "embercrest:titanite_slab",
+            "amount": 1
+          },
+          "requires": [
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "embercrest:lord_contender#elemental_proficiency"
+            },
+            {
+              "type": "palladium:not",
+              "conditions": [
+                {
+                  "type": "palladium:number_data_attachment",
+                  "attachment": "embercrest:contender_path",
+                  "min": 2,
+                  "max": 2
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "path_wraith": {
+      "type": "palladium:dummy",
+      "properties": {
+        "gui_position": [
+          -1.85,
+          -1.5
+        ],
+        "title": "Path: Wraith"
+      },
+      "state": {
+        "unlocking": {
+          "type": "palladium:buyable",
+          "cost": {
+            "type": "palladium:item",
+            "ingredient": "embercrest:titanite_slab",
+            "amount": 1
+          },
+          "requires": [
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "embercrest:lord_contender#elemental_proficiency"
+            },
+            {
+              "type": "palladium:not",
+              "conditions": [
+                {
+                  "type": "palladium:number_data_attachment",
+                  "attachment": "embercrest:contender_path",
+                  "min": 1,
+                  "max": 1
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "elemental_proficiency": {
+      "type": "palladium:dummy",
+      "properties": {
+        "gui_position": [
+          -1.5,
+          0
+        ],
+        "title": "Elemental Proficiency"
+      },
+      "state": {
+        "unlocking": {
+          "type": "palladium:buyable",
+          "cost": {
+            "type": "palladium:item",
+            "ingredient": "embercrest:titanite_slab",
+            "amount": 1
+          },
+          "requires": [
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "embercrest:lord_contender#set_charge_fire"
+            },
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "embercrest:lord_contender#set_charge_ice"
+            },
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "embercrest:lord_contender#set_charge_thunder"
+            }
+          ]
+        }
+      }
+    },
+    "remove_charge": {
+      "type": "palladium:command",
+      "properties": {
+        "hidden_in_gui": true,
+        "hidden_in_bar": true
+      },
+      "state": {
+        "enabling": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:item_in_slot",
+                "item": "embercrest:element_sword",
+                "slot": "mainhand"
+              },
+              {
+                "type": "palladium:ability_unlocked",
+                "ability": "embercrest:lord_contender#elemental_proficiency"
+              }
+            ]
+          },
+          {
+            "type": "palladium:number_data_attachment",
+            "attachment": "embercrest:contender_charge",
+            "min": 1,
+            "max": 10
+          }
+        ]
+      },
+      "commands": [],
+      "first_tick_commands": [
+        "palladium data-attachment set entity @s embercrest:contender_charge 0"
+      ]
+    },
+    "set_charge_death_bar": {
+      "type": "palladium:command",
+      "properties": {
+        "title": "Runic Charge: Decay",
+        "icon": "embercrest:textures/item/element_sword/element_sword_death.png",
+        "description": "A runic charge that allows you to imbue your blade with the noxious essence of death.",
+        "list_index": 2,
+        "hidden_in_gui": true
+      },
+      "first_tick_commands": [
+        "palladium data-attachment set entity @s embercrest:contender_charge_selected 4"
+      ],
+      "state": {
+        "enabling": {
+          "type": "palladium:key_bind",
+          "key_bind": {
+            "type": "palladium:ability_key"
+          },
+          "behaviour": "activation",
+          "time": 1,
+          "cooldown": 40
+        },
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "embercrest:lord_contender#set_charge_death"
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "embercrest:lord_contender#path_wraith"
+          }
+        ]
+      }
+    },
+    "set_charge_death": {
+      "type": "palladium:dummy",
+      "properties": {
+        "title": "Runic Charge: Decay",
+        "icon": "embercrest:textures/item/element_sword/element_sword_death.png",
+        "description": "A runic charge that allows you to imbue your blade with the noxious essence of death.",
+        "hidden_in_bar": true,
+        "gui_position": [
+          -2.85,
+          -2
+        ]
+      },
+      "state": {
+        "unlocking": {
+          "type": "palladium:buyable",
+          "cost": {
+            "type": "palladium:item",
+            "ingredient": "embercrest:titanite_slab",
+            "amount": 1
+          },
+          "requires": [
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "embercrest:lord_contender#path_wraith"
+            }
+          ]
+        }
+      }
+    },
+    "set_charge_soul_bar": {
+      "type": "palladium:command",
+      "properties": {
+        "title": "Runic Charge: Soul",
+        "icon": "embercrest:textures/item/element_sword/element_sword_soul.png",
+        "description": "A runic charge that allows you to imbue your blade with the raw power of the soul.",
+        "list_index": 3,
+        "hidden_in_gui": true
+      },
+      "first_tick_commands": [
+        "palladium data-attachment set entity @s embercrest:contender_charge_selected 5"
+      ],
+      "state": {
+        "enabling": {
+          "type": "palladium:key_bind",
+          "key_bind": {
+            "type": "palladium:ability_key"
+          },
+          "behaviour": "activation",
+          "time": 1,
+          "cooldown": 40
+        },
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "embercrest:lord_contender#set_charge_soul"
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "embercrest:lord_contender#path_wraith"
+          }
+        ]
+      }
+    },
+    "set_charge_soul": {
+      "type": "palladium:dummy",
+      "properties": {
+        "title": "Runic Charge: Soul",
+        "icon": "embercrest:textures/item/element_sword/element_sword_soul.png",
+        "description": "A runic charge that allows you to imbue your blade with the raw power of the soul.",
+        "gui_position": [
+          -2.85,
+          -1
+        ],
+        "hidden_in_bar": true
+      },
+      "state": {
+        "unlocking": {
+          "type": "palladium:buyable",
+          "cost": {
+            "type": "palladium:item",
+            "ingredient": "embercrest:titanite_slab",
+            "amount": 1
+          },
+          "requires": [
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "embercrest:lord_contender#path_wraith"
+            }
+          ]
+        }
+      }
+    },
+    "set_charge_ruin": {
+      "type": "palladium:dummy",
+      "properties": {
+        "title": "Runic Charge: Ruin",
+        "icon": "embercrest:textures/item/element_sword/element_sword_fire_green.png",
+        "description": "A runic charge that allows you to imbue your sword with the power of the Flame of Ruin.",
+        "hidden_in_bar": true,
+        "gui_position": [
+          -3,
+          -1.5
+        ]
+      },
+      "state": {
+        "unlocking": {
+          "type": "palladium:buyable",
+          "cost": {
+            "type": "palladium:item",
+            "ingredient": "embercrest:titanite_slab",
+            "amount": 1
+          },
+          "requires": [
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "embercrest:lord_contender#path_wraith"
+            }
+          ]
+        }
+      }
+    },
+    "set_charge_ruin_bar": {
+      "type": "palladium:command",
+      "properties": {
+        "title": "Runic Charge: Ruin",
+        "icon": "embercrest:textures/item/element_sword/element_sword_fire_green.png",
+        "description": "A runic charge that allows you to imbue your sword with the power of the Flame of Ruin.",
+        "list_index": 1,
+        "hidden_in_gui": true
+      },
+      "first_tick_commands": [
+        "palladium data-attachment set entity @s embercrest:contender_charge_selected 6"
+      ],
+      "state": {
+        "enabling": {
+          "type": "palladium:key_bind",
+          "key_bind": {
+            "type": "palladium:ability_key"
+          },
+          "behaviour": "activation",
+          "time": 1,
+          "cooldown": 40
+        },
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "embercrest:lord_contender#set_charge_ruin"
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "embercrest:lord_contender#path_wraith"
+          }
+        ]
+      }
+    },
+    "accursed_boon": {
+      "type": "palladium:dummy",
+      "properties": {
+        "title": "Unholy Boon",
+        "icon": "embercrest:textures/icon/ancient_tablet_dull.png",
+        "description": "Empower yourself with runic might, gaining bonuses to armor, health, and damage. While active, your Runic Charges require no start-up animation. Additionally, your charges last indefinitely even if the ability is not enabled. ",
+        "hidden_in_bar": true,
+        "gui_position": [
+          -4,
+          -1.5
+        ]
+      },
+      "state": {
+        "unlocking": {
+          "type": "palladium:buyable",
+          "cost": {
+            "type": "palladium:item",
+            "ingredient": "embercrest:titanite_slab",
+            "amount": 1
+          },
+          "requires": [
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "embercrest:lord_contender#set_charge_ruin"
+            },
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "embercrest:lord_contender#set_charge_soul"
+            },
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "embercrest:lord_contender#set_charge_death"
+            }
+          ]
+        }
+      }
+    },
+    "accursed_boon_particles": {
+      "type": "palladium:particles",
+      "emitter": "embercrest:rune_aura",
+      "particle_type": "minecraft:enchant",
+      "state": {
+        "enabling": {
+          "type": "palladium:number_data_attachment",
+          "attachment": "embercrest:accursed_boon_enabled",
+          "min": 1,
+          "max": 601
+        }
+      }
+    },
+    "accursed_boon_stats": {
+      "type": "palladium:attribute_modifier",
+      "properties": {
+        "hidden_in_gui": true
+      },
+      "modifiers": [
+        {
+          "attribute": "minecraft:armor_toughness",
+          "amount": 4,
+          "operation": "add_value"
+        },
+        {
+          "attribute": "minecraft:armor",
+          "amount": 8,
+          "operation": "add_value"
+        },
+        {
+          "attribute": "minecraft:attack_damage",
+          "amount": 1.5,
+          "operation": "add_multiplied_total"
+        },
+        {
+          "attribute": "minecraft:max_health",
+          "amount": 16,
+          "operation": "add_value"
+        }
+      ],
+      "state": {
+        "enabling": {
+          "type": "palladium:number_data_attachment",
+          "attachment": "embercrest:accursed_boon_enabled",
+          "min": 1,
+          "max": 601
+        }
+      }
+    },
+    "accursed_boon_bar": {
+      "type": "palladium:command",
+      "properties": {
+        "title": "Unholy Boon",
+        "icon": "embercrest:textures/icon/ancient_tablet_dull.png",
+        "description": "Empower yourself with runic might, gaining bonuses to armor, health, and damage. While active, your Runic Charges require no start-up animation. Additionally, your charges last indefinitely even if the ability is not enabled. ",
+        "hidden_in_gui": true,
+        "list_index": 4
+      },
+      "commands": [],
+      "first_tick_commands": [
+        "palladium data-attachment set entity @s embercrest:accursed_boon_enabled 600"
+      ],
+      "state": {
+        "enabling": {
+          "type": "palladium:key_bind",
+          "key_bind": {
+            "type": "palladium:ability_key"
+          },
+          "behaviour": "activation",
+          "time": 1,
+          "cooldown": 100
+        },
+        "unlocking": [
+          {
+            "type": "palladium:or",
+            "conditions": [
+              {
+                "type": "palladium:and",
+                "conditions": [
+                  {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "embercrest:lord_contender#accursed_boon"
+                  },
+                  {
+                    "type": "palladium:crouching"
+                  },
+                  {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "embercrest:lord_contender#runic_blow"
+                  }
+                ]
+              },
+              {
+                "type": "palladium:and",
+                "conditions": [
+                  {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "embercrest:lord_contender#accursed_boon"
+                  },
+                  {
+                    "type": "palladium:not",
+                    "conditions": [
+                      {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "embercrest:lord_contender#runic_blow"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "accursed_boon_tick": {
+      "type": "palladium:action",
+      "action": {
+        "type": "palladium:modify_number_data_attachment",
+        "attachment": "embercrest:accursed_boon_enabled",
+        "operation": "+",
+        "value": -1
+      },
+      "properties": {
+        "hidden_in_gui": true
+      },
+      "state": {
+        "enabling": {
+          "type": "palladium:number_data_attachment",
+          "attachment": "embercrest:accursed_boon_enabled",
+          "min": 1,
+          "max": 601
+        }
+      }
+    },
+    "charged_blow_bar": {
+      "type": "palladium:dummy",
+      "properties": {
+        "title": "Charged Blow",
+        "icon": "#embercrest:charged_blow",
+        "description": "Activate your chosen elemental charge.",
+        "list_index": 4,
+        "hidden_in_gui": true
+      },
+      "state": {
+        "unlocking": {
+          "type": "palladium:ability_unlocked",
+          "ability": "embercrest:lord_contender#charged_blow"
+        },
+        "enabling": {
+          "type": "palladium:key_bind",
+          "key_bind": {
+            "type": "palladium:ability_key"
+          },
+          "behaviour": "activation",
+          "time": 1,
+          "cooldown": 40
+        }
+      }
+    },
+    "charged_blow": {
+      "type": "palladium:dummy",
+      "properties": {
+        "title": "Charged Blow",
+        "icon": "#embercrest:charged_blow",
+        "description": "Activate your chosen elemental charge.",
+        "gui_position": [
+          -3,
+          1.5
+        ],
+        "hidden_in_bar": true
+      },
+      "state": {
+        "unlocking": {
+          "type": "palladium:buyable",
+          "cost": {
+            "type": "palladium:item",
+            "ingredient": "embercrest:titanite_slab",
+            "amount": 1
+          },
+          "requires": [
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "embercrest:lord_contender#trained_warrior"
+            },
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "embercrest:lord_contender#element_mastery"
+            }
+          ]
+        }
+      }
+    },
+    "trained_warrior": {
+      "type": "palladium:attribute_modifier",
+      "properties": {
+        "title": "Trained Warrior",
+        "icon": "embercrest:textures/icon/lifedrinker_helm.png",
+        "description": "Your intense training has granted you an increase to strength, speed, and durability.",
+        "gui_position": [
+          -2.35,
+          1.75
+        ],
+        "hidden_in_bar": true
+      },
+      "modifiers": [
+        {
+          "attribute": "minecraft:jump_strength",
+          "amount": 0.21,
+          "operation": "add_value"
+        },
+        {
+          "attribute": "minecraft:movement_speed",
+          "amount": 0.3,
+          "operation": "add_multiplied_base"
+        },
+        {
+          "attribute": "minecraft:attack_damage",
+          "amount": 1.333,
+          "operation": "add_multiplied_total"
+        },
+        {
+          "attribute": "minecraft:max_health",
+          "amount": 10,
+          "operation": "add_value"
+        }
+      ],
+      "state": {
+        "unlocking": {
+          "type": "palladium:buyable",
+          "cost": {
+            "type": "palladium:item",
+            "ingredient": "embercrest:titanite_slab",
+            "amount": 1
+          },
+          "requires": [
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "embercrest:lord_contender#path_knight"
+            }
+          ]
+        }
+      }
+    },
+    "element_mastery": {
+      "type": "palladium:dummy",
+      "properties": {
+        "title": "Elemental Mastery",
+        "icon": "#embercrest:charged_blow",
+        "description": "Your elemental charges last indefinitely and require no start-up animation.",
+        "hidden_in_gui": false,
+        "gui_position": [
+          -2.35,
+          1.25
+        ]
+      },
+      "state": {
+        "unlocking": {
+          "type": "palladium:buyable",
+          "cost": {
+            "type": "palladium:item",
+            "ingredient": "embercrest:titanite_slab",
+            "amount": 1
+          },
+          "requires": [
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "embercrest:lord_contender#path_knight"
+            }
+          ]
+        }
+      }
+    },
+    "runic_blow_bar": {
+      "type": "palladium:dummy",
+      "properties": {
+        "title": "Runic Blow",
+        "icon": "#embercrest:charged_blow",
+        "description": "Activate your chosen runic charge.",
+        "list_index": 4,
+        "hidden_in_gui": true
+      },
+      "state": {
+        "unlocking": {
+          "type": "palladium:ability_unlocked",
+          "ability": "embercrest:lord_contender#runic_blow"
+        },
+        "enabling": {
+          "type": "palladium:key_bind",
+          "key_bind": {
+            "type": "palladium:ability_key"
+          },
+          "behaviour": "activation",
+          "time": 1,
+          "cooldown": 40
+        }
+      }
+    },
+    "runic_blow": {
+      "type": "palladium:dummy",
+      "properties": {
+        "title": "Charged Blow",
+        "icon": "#embercrest:charged_blow",
+        "description": "Activate your chosen runic charge.",
+        "gui_position": [
+          -5,
+          1.5
+        ],
+        "hidden_in_bar": true
+      },
+      "state": {
+        "unlocking": {
+          "type": "palladium:buyable",
+          "cost": {
+            "type": "palladium:item",
+            "ingredient": "embercrest:titanite_slab",
+            "amount": 1
+          },
+          "requires": [
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "embercrest:lord_contender#accursed_boon"
+            },
+            {
+              "type": "palladium:not",
+              "conditions": [
+                {
+                  "type": "palladium:crouching"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

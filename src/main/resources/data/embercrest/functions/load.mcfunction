@@ -1,0 +1,2 @@
+scoreboard objectives add gravity_rotation_y dummy
+scoreboard objectives add gravity_rotation_x dummy

@@ -1,17 +1,39 @@
 {
   "name": "Sanguine One",
   "icon": "minecraft:command_block",
+
   "abilities": {
-  "speed_1": {
-    "type": "palladium:attribute_modifier",
-    "modifier": {
-      "attribute": "minecraft:movement_speed",
-      "amount": {
-        "type": "palladium:float_data_attachment",
-        "attachment": "embercrest:sanguine_speed"
-      },
-      "operation": "add_multiplied_base"
+    "speed_1": {
+      "type": "palladium:attribute_modifier",
+      "modifiers": {
+        "attribute": "minecraft:movement_speed",
+        "amount": {
+          "type": "palladium:float_data_attachment",
+          "attachment": "embercrest:sanguine_speed"
+        },
+        "operation": "add_multiplied_base"
+      }
+    },
+    "enableanimblood": {
+      "type": "palladium:dummy",
+      "properties": {
+        "animation_timer": {
+          "min": 1,
+          "max": 9,
+          "easing": "linear"
+        },
+        "render_layer": "embercrest:render_bloodarms"},
+      "state": {
+        "enabling": {
+          "type": "palladium:key_bind",
+          "key_bind": {
+            "type": "palladium:ability_key"
+          },
+          "behaviour": "toggle",
+          "cooldown": 20
+        }
+      }
     }
-  }
-  }
+
+}
 }

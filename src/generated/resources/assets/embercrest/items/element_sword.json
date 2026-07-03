@@ -1,6 +1,57 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "embercrest:item/element_sword"
+    "type": "minecraft:range_dispatch",
+
+    "property": "embercrest:contender_charge",
+    "scale": 1,
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "embercrest:item/element_sword_base"
+    },
+
+    "normalize": false,
+
+    "entries": [
+      {
+        "threshold": 1,
+        "model": {
+          "type": "minecraft:model",
+          "model": "embercrest:item/element_sword_fire"
+        }
+      },
+      {
+        "threshold": 2,
+        "model": {
+          "type": "minecraft:model",
+          "model": "embercrest:item/element_sword_ice"
+        }},
+      {
+        "threshold": 3,
+        "model": {
+          "type": "minecraft:model",
+          "model": "embercrest:item/element_sword_thunder"
+        }},
+      {
+        "threshold": 4,
+        "model": {
+          "type": "minecraft:model",
+          "model": "embercrest:item/element_sword_death"
+        }},
+      {
+        "threshold": 5,
+        "model": {
+          "type": "minecraft:model",
+          "model": "embercrest:item/element_sword_soul"
+        }},
+      {
+        "threshold": 6,
+        "model": {
+          "type": "minecraft:model",
+          "model": "embercrest:item/element_sword_ruin"
+        }
+      }
+    ]
   }
 }
+
+

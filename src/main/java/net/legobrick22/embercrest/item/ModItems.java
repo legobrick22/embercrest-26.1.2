@@ -72,6 +72,15 @@ public class ModItems {
     public static final DeferredItem<Item> BLOOD_VIAL = ITEMS.registerItem("blood_vial",
             properties -> new Item(properties.food(ModFoods.BLOOD_VIAL, ModFoods.BLOOD_VIAL_CONSUMABLE)));
 
+    public static final DeferredItem<Item> GREEN_BLOOD_VIAL = ITEMS.registerItem("toxic_blood_vial",
+            properties -> new Item(properties.food(ModFoods.GREEN_BLOOD_VIAL, ModFoods.GREEN_BLOOD_VIAL_CONSUMABLE)));
+
+    public static final DeferredItem<Item> PUTREFIED_FLESH = ITEMS.registerItem("putrefied_flesh",
+            properties -> new Item(properties.food(ModFoods.PUTREFIED_FLESH, ModFoods.PUTREFIED_FLESH_CONSUMABLE)));
+
+    public static final DeferredItem<Item> LIQUIFIED_FLESH = ITEMS.registerItem("liquified_flesh",
+            properties -> new Item(properties.food(ModFoods.LIQUIFIED_FLESH, ModFoods.LIQUIFIED_FLESH_CONSUMABLE)));
+
     public static final CobwebEntry<BlockItem> RUIN_CAMPFIRE_ITEM = FireRegistrar.registerCampfireItem(RUIN_FIRE_TYPE);
     public static final CobwebEntry<BlockItem> RUIN_LANTERN_ITEM = FireRegistrar.registerLanternItem(RUIN_FIRE_TYPE);
 

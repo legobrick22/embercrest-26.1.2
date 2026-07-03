@@ -1,0 +1,61 @@
+{
+  "name": "Gravity Rise",
+  "icon": "minecraft:command_block",
+  "hidden": false,
+  "abilities": {
+    "gravity_manipulation_rise": {
+      "type": "palladium:attribute_modifier",
+      "modifiers": {
+        "attribute": "minecraft:gravity",
+        "amount": 0.16,
+        "operation": "add_value"
+      },
+      "properties": {
+        "animation_timer": {
+          "min": 0,
+          "max": 21,
+          "easing": "linear"
+        }
+      },
+      "conditions": {
+        "enabling": {
+          "type": "palladium:ability_animation_timer_value",
+          "ability": "embercrest:gravity_rise#gravity_manipulation_rise",
+          "min": 0,
+          "max": 20
+        }
+      }
+    },
+    "gravity_manipulation_hold": {
+      "type": "palladium:attribute_modifier",
+      "modifiers": {
+        "attribute": "minecraft:gravity",
+        "amount": 0.07,
+        "operation": "add_value"
+      },
+      "properties": {
+        "animation_timer": {
+          "min": 0,
+          "max": 21,
+          "easing": "linear"
+        }
+      },
+      "conditions": {
+        "enabling": {
+          "type": "palladium:or",
+          "conditions": [
+            {
+              "type": "palladium:ability_animation_timer_value",
+              "ability": "embercrest:gravity_rise#gravity_manipulation_hold",
+              "min": 1,
+              "max": 20
+            },
+            {
+              "type": "palladium:ability_last_tick",
+              "ability": "embercrest:gravity_rise#gravity_manipulation_rise"
+            }
+          ]
+        }
+      }
+    }
+}}

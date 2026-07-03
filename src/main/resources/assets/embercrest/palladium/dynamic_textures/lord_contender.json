@@ -1,0 +1,7 @@
+{
+  "base": "embercrest:textures/icon/lord_contender_icon_#PATH.png",
+  "variables": {
+    "PATH": {
+      "type": "palladium:integer_data_attachment",
+      "attachment": "embercrest:contender_path"
+}}}
