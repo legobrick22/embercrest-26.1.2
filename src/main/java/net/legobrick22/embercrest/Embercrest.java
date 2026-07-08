@@ -9,7 +9,7 @@ import net.legobrick22.embercrest.fire.FireTypes;
 import net.legobrick22.embercrest.item.ModItems;
 import net.legobrick22.embercrest.registry.ModComponentTypes;
 import net.legobrick22.embercrest.registry.ModEffects;
-import net.legobrick22.embercrest.registry.ModParticleTypes;
+import net.legobrick22.embercrest.registry.ModParticles;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.resources.Identifier;
 import net.neoforged.fml.loading.FMLEnvironment;
@@ -70,14 +70,13 @@ public class Embercrest {
         ModItems.register(modEventBus);
         ModDataComponents.register(modEventBus);
         EmbercrestAbilities.ABILITIES.register(modEventBus);
-        ModParticleTypes.PARTICLE_TYPES.register(modEventBus);
+        ModParticles.PARTICLE.register(modEventBus);
 
         if (FMLEnvironment.getDist().isClient()) {
             modEventBus.addListener(ContenderCharge::registerRangeProperties);
         }
             ModCreativeModeTabs.register(modEventBus);
         ModEffects.MOB_EFFECTS.register(modEventBus);
-        ModParticleTypes.PARTICLE_TYPES.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (Embercrest) to respond directly to events.

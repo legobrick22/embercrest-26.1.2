@@ -1,9 +1,10 @@
 package net.legobrick22.embercrest;
 
-import net.legobrick22.embercrest.registry.ModParticleTypes;
-import net.legobrick22.embercrest.registry.RegisterParticleProviders;
+import net.legobrick22.embercrest.client.GravityParticleProvider;
+import net.legobrick22.embercrest.registry.ModParticles;
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -34,6 +35,15 @@ public class EmbercrestClient {
 
 
 
+    public static void init(IEventBus eventBus) {
+        // Register client-specific event listeners on the MOD bus
+        eventBus.addListener(EmbercrestClient::registerParticleProviders);
+
+        Embercrest.LOGGER.debug("Embercrest client registration initialized");
+    }
+    public static void registerParticleProviders(RegisterParticleProvidersEvent event) {
+        event.registerSpriteSet(ModParticles.GRAVITY_PARTICLE.get(), GravityParticleProvider::new);
+    }
 
 
 }
