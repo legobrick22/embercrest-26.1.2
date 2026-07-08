@@ -18,13 +18,13 @@ public class ModEffects {
     );
 
     public static final Holder<MobEffect> GRAVITY = MOB_EFFECTS.register("gravity",
-            () -> new GravityEffect(MobEffectCategory.HARMFUL, 0x7DD3FC)
+            () -> new GravityEffect(MobEffectCategory.NEUTRAL, 0x7DD3FC)
     );
     public static final Holder<MobEffect> INSTANT_GRAVITY = MOB_EFFECTS.register("instant_gravity",
-            () -> new InstantGravityEffect(MobEffectCategory.HARMFUL, 0x7DD3FC));
+            () -> new InstantGravityEffect(MobEffectCategory.NEUTRAL, 0x7DD3FC));
 
     public static final Holder<MobEffect> ANTI_GRAVITY = MOB_EFFECTS.register("anti_gravity",
-            () -> new AntiGravityEffect(MobEffectCategory.HARMFUL, 0x7DD3FC)
+            () -> new AntiGravityEffect(MobEffectCategory.NEUTRAL, 0x7DD3FC)
 
     );
     public static final Holder<MobEffect> CUT_RUBY = MOB_EFFECTS.register("cut_diamond",
@@ -32,6 +32,9 @@ public class ModEffects {
     );
     public static final Holder<MobEffect> VOID_CHARGE = MOB_EFFECTS.register("void_charge",
             () -> new VoidChargeEffect(MobEffectCategory.HARMFUL, 0x0000FF)); // Light ice blue color
+
+    public static final Holder<MobEffect> SOUL_HARVEST = MOB_EFFECTS.register("soul_harvest",
+            () -> new SoulHarvestEffect(MobEffectCategory.BENEFICIAL, 0x0000FF)); // Light ice blue color
 
     public static final Holder<MobEffect> SURGE = MOB_EFFECTS.register("surge",
             () -> new SurgeEffect(MobEffectCategory.HARMFUL, 0x0000FF)); // Light ice blue color

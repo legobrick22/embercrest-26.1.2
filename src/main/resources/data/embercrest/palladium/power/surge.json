@@ -1,0 +1,134 @@
+{
+  "name": "Sanguine One",
+  "icon": "minecraft:command_block",
+
+  "abilities": {
+    "tick_down": {
+      "type": "palladium:action",
+      "action": {
+        "type": "palladium:modify_number_data_attachment",
+        "attachment": "embercrest:surge",
+        "operation": "+",
+        "value": -1
+      },
+      "state": {
+        "enabling": {
+          "type": "palladium:number_data_attachment",
+          "attachment": "embercrest:surge",
+          "min": 1,
+          "max": 2147483
+        }
+      }
+    },
+    "attributes_1": {
+      "type": "palladium:attribute_modifier",
+      "modifiers": [
+        {
+          "attribute": "minecraft:movement_speed",
+          "amount": -0.3,
+          "operation": "add_multiplied_total"
+        },
+        {
+          "attribute": "minecraft:attack_speed",
+          "amount": -0.3,
+          "operation": "add_multiplied_total"
+        }
+      ]
+    },
+    "attributes_2": {
+      "type": "palladium:attribute_modifier",
+      "modifiers": [
+        {
+          "attribute": "minecraft:movement_speed",
+          "amount": -0.3,
+          "operation": "add_multiplied_total"
+        },
+        {
+          "attribute": "minecraft:attack_speed",
+          "amount": -0.3,
+          "operation": "add_multiplied_total"
+        },
+        {
+          "attribute": "minecraft:attack_damage",
+          "amount": -0.3,
+          "operation": "add_multiplied_total"
+        }
+      ],
+      "state": {
+        "enabling": {
+          "type": "palladium:number_data_attachment",
+          "attachment": "embercrest:surge",
+          "min": 180,
+          "max": 2147483
+        }
+      }
+
+    },
+    "attributes_3": {
+      "type": "palladium:attribute_modifier",
+      "modifiers": [
+        {
+          "attribute": "minecraft:movement_speed",
+          "amount": -0.3,
+          "operation": "add_multiplied_total"
+        },
+        {
+          "attribute": "minecraft:attack_speed",
+          "amount": -0.3,
+          "operation": "add_multiplied_total"
+        },
+        {
+          "attribute": "minecraft:attack_damage",
+          "amount": -0.3,
+          "operation": "add_multiplied_total"
+        }
+      ],
+      "state": {
+        "enabling": {
+          "type": "palladium:number_data_attachment",
+          "attachment": "embercrest:surge",
+          "min": 360,
+          "max": 2147483
+        }
+      }
+    },
+    "effects_2": {
+      "type": "palladium:command",
+      "commands": [],
+      "first_tick_commands": [
+        "effect give @s blindness infinite 0 true"
+      ],
+      "last_tick_commands": [
+        "effect clear @s blindness"
+      ],
+      "state": {
+        "enabling": {
+          "type": "palladium:number_data_attachment",
+          "attachment": "embercrest:surge",
+          "min": 160,
+          "max": 2147483
+        }
+      }
+    },
+    "effects_3": {
+      "type": "palladium:command",
+      "commands": [],
+      "first_tick_commands": [
+        "effect give @s nausea infinite 0 true",
+        "effect give @s embercrest:surge infinite 0 true"
+      ],
+      "last_tick_commands": [
+        "effect clear @s nausea",
+        "effect clear @s embercrest:surge"
+      ],
+      "state": {
+        "enabling": {
+          "type": "palladium:number_data_attachment",
+          "attachment": "embercrest:surge",
+          "min": 320,
+          "max": 2147483
+        }
+      }
+    }
+  }
+  }

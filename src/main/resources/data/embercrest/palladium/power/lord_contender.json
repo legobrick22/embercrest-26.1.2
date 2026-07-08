@@ -213,7 +213,7 @@
       "properties": {
         "title": "Activate Elemental Charge",
         "icon": "embercrest:textures/icon/contender_charge.png",
-        "description": "Activate your chosen elemental charge..",
+        "description": "Activate your chosen elemental charge.",
         "list_index": 0,
         "hidden_in_gui": true
       },
@@ -224,7 +224,7 @@
             "type": "palladium:ability_key"
           },
           "behaviour": "activation",
-          "time": 30,
+          "time": 25,
           "cooldown": 40
         }
       }
@@ -234,7 +234,7 @@
       "properties": {
         "title": "Activate Elemental Charge",
         "icon": "embercrest:textures/icon/contender_charge.png",
-        "description": "Activate your chosen elemental charge..",
+        "description": "Activate your chosen elemental charge.",
         "list_index": 0,
         "hidden_in_gui": true,
         "hidden_in_bar": true
@@ -300,7 +300,6 @@
             ]
           }
         ]
-
       }
     },
     "lord_contender": {
@@ -693,6 +692,9 @@
       "type": "palladium:particles",
       "emitter": "embercrest:rune_aura",
       "particle_type": "minecraft:enchant",
+      "properties": {
+        "hidden_in_gui": true
+      },
       "state": {
         "enabling": {
           "type": "palladium:number_data_attachment",
@@ -831,7 +833,8 @@
         "icon": "#embercrest:charged_blow",
         "description": "Activate your chosen elemental charge.",
         "list_index": 4,
-        "hidden_in_gui": true
+        "hidden_in_gui": true,
+        "animation_timer": 40
       },
       "state": {
         "unlocking": {
@@ -844,8 +847,8 @@
             "type": "palladium:ability_key"
           },
           "behaviour": "activation",
-          "time": 1,
-          "cooldown": 40
+          "time": 300,
+          "cooldown": 400
         }
       }
     },
@@ -990,12 +993,12 @@
     "runic_blow": {
       "type": "palladium:dummy",
       "properties": {
-        "title": "Charged Blow",
+        "title": "Runic Blow",
         "icon": "#embercrest:charged_blow",
         "description": "Activate your chosen runic charge.",
         "gui_position": [
-          -5,
-          1.5
+          -4.5,
+          -1.5
         ],
         "hidden_in_bar": true
       },
@@ -1023,6 +1026,147 @@
           ]
         }
       }
+    },
+    "explosion": {
+      "type": "embercrest:explosion",
+      "properties": {
+        "hidden_in_gui": true
+      },
+      "radius": 4,
+      "fire": true,
+      "state": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_animation_timer_value",
+            "ability": "embercrest:lord_contender#charged_blow_bar",
+            "min": 30,
+            "max": 30
+          },
+          {
+            "type": "palladium:number_data_attachment",
+            "attachment": "embercrest:contender_charge",
+            "min": 1,
+            "max": 1
+          },
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "embercrest:lord_contender#charged_blow_bar"
+          }
+        ]
+      }
+    },
+    "aura": {
+      "type": "embercrest:fire_aura",
+      "properties": {
+        "hidden_in_gui": true
+      },
+      "state": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_animation_timer_value",
+            "ability": "embercrest:lord_contender#charged_blow_bar",
+            "min": 20,
+            "max": 30
+          },
+          {
+            "type": "palladium:number_data_attachment",
+            "attachment": "embercrest:contender_charge",
+            "min": 1,
+            "max": 1
+          },
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "embercrest:lord_contender#charged_blow_bar"
+          }
+        ]
+      }
+    },
+    "flame_blow_particles": {
+      "type": "palladium:particles",
+      "emitter": "embercrest:flameblow",
+      "particle_type": "minecraft:flame",
+      "properties": {
+        "hidden_in_gui": true
+      },
+      "state": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_animation_timer_value",
+            "ability": "embercrest:lord_contender#charged_blow_bar",
+            "min": 20,
+            "max": 30
+          },
+          {
+            "type": "palladium:number_data_attachment",
+            "attachment": "embercrest:contender_charge",
+            "min": 1,
+            "max": 1
+          },
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "embercrest:lord_contender#charged_blow_bar"
+          }
+        ]
+      }
+    },
+    "lightning_blow_beam": {
+      "type": "palladium:beam",
+      "beam_renderer": "embercrest:thunder_blow",
+      "damage": 5,
+      "max_distance": 25,
+      "set_on_fire_ticks": 20,
+      "state": {
+        "enabling":
+        {
+          "type": "palladium:ability_enabled",
+          "ability": "embercrest:lord_contender#charged_blow_thunder"
+        }
+
+      }
+    },
+    "lightning_blow_beam2": {
+      "type": "palladium:beam",
+      "beam_renderer": "embercrest:thunder_blow2",
+      "properties":{
+        "hidden_in_gui": true
+
+      },
+      "damage": 0,
+      "max_distance": 25,
+      "set_on_fire_ticks": 20,
+      "state": {
+        "enabling":
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "embercrest:lord_contender#charged_blow_thunder"
+          }
+
+      }
+
+    },
+    "charged_blow_thunder": {
+      "type": "palladium:dummy",
+      "properties": {
+        "hidden_in_bar": true,
+        "hidden_in_gui": true
+      },
+      "state": {
+        "enabling": {
+          "type": "palladium:key_bind",
+          "key_bind": {
+            "type": "palladium:mouse_click",
+            "click_type": "right_click",
+            "cancel_interaction": true
+          },
+          "behaviour": "held"
+        },
+        "unlocking": {
+          "type": "palladium:ability_enabled",
+          "ability": "embercrest:lord_contender#charged_blow_bar"
+
+        }
+      }
+
     }
   }
 }

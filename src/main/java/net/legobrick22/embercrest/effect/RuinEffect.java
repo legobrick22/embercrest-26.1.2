@@ -20,7 +20,7 @@ public class RuinEffect extends MobEffect {
     /**
      * Movement speed reduction per level (0.15 = 15% reduction per level, similar to Slowness I).
      */
-    public static final double TOUGHNESS_REDUCTION_PER_LEVEL = 1.0;
+    public static final double TOUGHNESS_REDUCTION_PER_LEVEL = 0.5;
 
     /**
      * Healing reduction multiplier per level (0.25 = 25% reduction per level).
@@ -30,7 +30,7 @@ public class RuinEffect extends MobEffect {
     /**
      * Armor reduction per level in armor points.
      */
-    public static final double ARMOR_REDUCTION_PER_LEVEL = 3.0;
+    public static final double ARMOR_REDUCTION_PER_LEVEL = 1.0;
 
     private static final Identifier ARMOR_MODIFIER_ID = Embercrest.id("ruin_armor_reduction");
     private static final Identifier TOUGHNESS_MODIFIER_ID = Embercrest.id("ruin_toughness_reduction");
@@ -57,22 +57,5 @@ public class RuinEffect extends MobEffect {
     }
 
 
-    public boolean applyEffectTick(ServerLevel level, LivingEntity mob, int amplification) {
-        float damageAmount = 2.0f + amplification;
-
-        mob.hurtServer(level, mob.damageSources().magic(), damageAmount);
-        return true;
-
-        /**
-         * Calculates the shield damage multiplier for a given effect amplifier.
-         * @param amplifier The effect amplifier (0 = level 1, 1 = level 2, etc.)
-         * @return The multiplier to apply to shield durability damage (1.0 = normal, 1.5 = 50% more, etc.)
-         */
-
-    }
-    public boolean shouldApplyEffectTickThisTick(int tickCount, int amplification) {
-        int interval = 25 >> amplification;
-        return interval <= 0 || tickCount % interval == 0;
-    }
 
     }

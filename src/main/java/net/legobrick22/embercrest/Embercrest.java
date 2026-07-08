@@ -1,5 +1,6 @@
 package net.legobrick22.embercrest;
 
+import net.legobrick22.embercrest.abilities.EmbercrestAbilities;
 import net.legobrick22.embercrest.block.ModBlocks;
 import net.legobrick22.embercrest.client.model.ContenderCharge;
 import net.legobrick22.embercrest.creativemodetab.ModCreativeModeTabs;
@@ -68,6 +69,8 @@ public class Embercrest {
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
         ModDataComponents.register(modEventBus);
+        EmbercrestAbilities.ABILITIES.register(modEventBus);
+        ModParticleTypes.PARTICLE_TYPES.register(modEventBus);
 
         if (FMLEnvironment.getDist().isClient()) {
             modEventBus.addListener(ContenderCharge::registerRangeProperties);

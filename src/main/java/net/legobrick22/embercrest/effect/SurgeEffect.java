@@ -32,29 +32,13 @@ public class SurgeEffect extends MobEffect {
     public SurgeEffect(MobEffectCategory category, int color) {
         super(category, color);
 
-        // Apply armor reduction as an attribute modifier
-        // This automatically scales with effect level
-        addAttributeModifier(
-                Attributes.ARMOR,
-                ARMOR_MODIFIER_ID,
-                -ARMOR_REDUCTION_PER_LEVEL,
-                AttributeModifier.Operation.ADD_VALUE
-        );
-
-        // Apply movement speed reduction (similar to Slowness I)
-        addAttributeModifier(
-                Attributes.ARMOR_TOUGHNESS,
-                TOUGHNESS_MODIFIER_ID,
-                TOUGHNESS_REDUCTION_PER_LEVEL,
-                AttributeModifier.Operation.ADD_VALUE
-        );
     }
 
 
     public boolean applyEffectTick(ServerLevel level, LivingEntity mob, int amplification) {
-        float damageAmount = 2.0f + amplification;
+        float damageAmount = 3.0f + amplification;
 
-        mob.hurtServer(level, mob.damageSources().magic(), damageAmount);
+        mob.hurtServer(level, mob.damageSources().lightningBolt(), damageAmount);
         return true;
 
         /**
@@ -65,7 +49,7 @@ public class SurgeEffect extends MobEffect {
 
     }
     public boolean shouldApplyEffectTickThisTick(int tickCount, int amplification) {
-        int interval = 25 >> amplification;
+        int interval = 20 >> amplification;
         return interval <= 0 || tickCount % interval == 0;
     }
 

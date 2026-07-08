@@ -1,0 +1,16 @@
+{
+  "render_layers": {
+    "embercrest:surge_1": {
+      "type": "palladium:ability_enabled",
+      "ability": "embercrest:surge#tick_down"
+    },
+    "embercrest:surge_2": {
+      "type": "palladium:ability_enabled",
+      "ability": "embercrest:surge#attributes_2"
+    },
+    "embercrest:surge_3": {
+      "type": "palladium:ability_enabled",
+      "ability": "embercrest:surge#attributes_3"
+    }
+  }
+}

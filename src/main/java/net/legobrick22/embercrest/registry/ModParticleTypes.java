@@ -14,7 +14,7 @@ public class ModParticleTypes {
     public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES =
             DeferredRegister.create(Registries.PARTICLE_TYPE, Embercrest.MOD_ID);
 
-    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> GRAVITY = PARTICLE_TYPES.register(
+    public static final DeferredHolder<ParticleType<?>, SimpleParticleType> GRAVITY_PARTICLE = PARTICLE_TYPES.register(
             "gravity",
             () -> new SimpleParticleType(false)
     );

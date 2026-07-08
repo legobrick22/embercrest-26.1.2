@@ -11,23 +11,34 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import org.jspecify.annotations.Nullable;
 
-public class RegisterParticleProviders implements ParticleProvider<SimpleParticleType> {
+public class GravityProvider implements ParticleProvider<SimpleParticleType> {
+
+
 
     private final SpriteSet spriteSet;
 
     // Take in the sprite set provided by the `ParticleResources`.
-    public RegisterParticleProviders(SpriteSet spriteSet) {
+    public GravityProvider(SpriteSet spriteSet) {
         this.spriteSet = spriteSet;
     }
 
     @Override
-    public @Nullable Particle createParticle(SimpleParticleType simpleParticleType, ClientLevel clientLevel, double v, double v1, double v2, double v3, double v4, double v5, RandomSource randomSource) {
-        return null;
+    public @Nullable Particle createParticle(SimpleParticleType simpleParticleType, ClientLevel clientLevel, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, RandomSource randomSource) {
+        // 1. Create the particle instance (Use your actual particle class name here, e.g., GravityParticle)
+        GravityProvider particle = new GravityProvider(spriteSet);
+
+        // 2. Assign the sprite textures from your SpriteSet
+        particle.pickSprite(this.spriteSet);
+
+        // 3. Return the fully configured particle at the very end
+        return particle;
     }
     @SubscribeEvent // on the mod event bus only on the physical client
     public static void registerParticleProviders(RegisterParticleProvidersEvent event) {
-        // #registerSpriteSet MUST be used when dealing with particle descriptions.
-        event.registerSpriteSet(ModParticleTypes.GRAVITY.get(), RegisterParticleProviders::new);
+        event.registerSpriteSet(ModParticleTypes.GRAVITY_PARTICLE.get(), GravityProvider::new);
+
 
     // ...
-}}
+}
+
+}

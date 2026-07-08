@@ -28,6 +28,8 @@ import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.threetag.palladium.power.SuperpowerUtil;
+import net.threetag.palladium.registry.PalladiumRegistryKeys;
 import org.jspecify.annotations.Nullable;
 
 
@@ -42,7 +44,7 @@ import static net.legobrick22.embercrest.fire.FireTypes.RUIN_FIRE_TYPE;
 public class ElementSwordItem extends Item {
 
     public ElementSwordItem(Properties properties) {
-        super(properties.sword(ToolMaterial.DIAMOND, 6.0f, -2.4f)
+        super(properties.sword(ToolMaterial.DIAMOND, 5.0f, -2.4f)
         );
     }
     @Override
@@ -91,18 +93,27 @@ public class ElementSwordItem extends Item {
                 else {
                     if (Objects.equals(attacker.getData(attachment), 5)) {
                         target.addEffect(new MobEffectInstance(ModEffects.VOID_CHARGE, 120, 0, false, false));
-                    }
+                        attacker.addEffect(new MobEffectInstance(ModEffects.SOUL_HARVEST, 180, 0, false, false));
+                        if (attacker.getAbsorptionAmount() < 4){
+                            attacker.setAbsorptionAmount(attacker.getAbsorptionAmount()+1);}
+                        if (attacker.getHealth() < attacker.getMaxHealth()/2 && target.getHealth() > 3*attacker.getMaxHealth()/4) {
+                            attacker.heal(2);
+                        }
+                        }
+
+
                     else {
                         if (Objects.equals(attacker.getData(attachment), 3)) {
                             AttachmentType<Integer> surge = (AttachmentType<Integer>) NeoForgeRegistries.ATTACHMENT_TYPES.getValue(Identifier.fromNamespaceAndPath("embercrest", "surge"));
-                            if (target.getData(surge) != null){
-                            int currentsurge = target.getData(surge);
-                            target.setData(surge, currentsurge + 60);}
-                            else {
-                                target.setData(surge, 60);}
-
+                            if (target.getData(surge) != null) {
+                                int currentsurge = target.getData(surge);
+                                target.setData(surge, currentsurge + 60);
+                                SuperpowerUtil.addSuperpower(target, target.registryAccess().lookupOrThrow(PalladiumRegistryKeys.POWER).get(Identifier.fromNamespaceAndPath("embercrest", "surge")).get());
+                            } else {
+                                target.setData(surge, 60);
+                                SuperpowerUtil.addSuperpower(target, target.registryAccess().lookupOrThrow(PalladiumRegistryKeys.POWER).get(Identifier.fromNamespaceAndPath("embercrest", "surge")).get());
+                            }
                         }
-
 
                     }
 

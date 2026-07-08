@@ -1,0 +1,12 @@
+{
+  "body_part": "body",
+  "amount": 20,
+  "offset": [0, 0, -10],
+  "offset_random": [0, 0, 0],
+  "motion": [0, 0, 0],
+  "motion_random": [40, 20, 40],
+  "conditions": {
+    "main": true,
+    "first_person": true
+  }
+}

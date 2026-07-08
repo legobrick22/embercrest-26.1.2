@@ -1,0 +1,9 @@
+{
+  "type": "palladium:lightning_sparks",
+  "frequency": 0.3,
+  "amount": 8,
+  "render_settings": {
+    "glow": "#14a3c7",
+    "bloom": 2,
+    "size": 1.5
+  }}
